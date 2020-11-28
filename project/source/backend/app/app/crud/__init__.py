@@ -1,3 +1,4 @@
+from .crud_ingredient import ingredient
 from .crud_item import item
 from .crud_user import user
 

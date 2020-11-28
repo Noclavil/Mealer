@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 from app.db.base_class import Base
 
 if TYPE_CHECKING:
+    from .ingredient import Ingredient  # noqa: F401
     from .item import Item  # noqa: F401
 
 
@@ -17,3 +18,4 @@ class User(Base):
     is_active = Column(Boolean(), default=True)
     is_superuser = Column(Boolean(), default=False)
     items = relationship("Item", back_populates="owner")
+    ingredients = relationship("Ingredient", back_populates="owner")
